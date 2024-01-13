@@ -1,0 +1,149 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.banner {
+	border-radius: 20px;
+	overflow: hidden;
+	position: relative;
+	&__img {
+		width: 100%;
+		height: 100%;
+		text-align: right;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		justify-content: flex-end;
+		line-height: 0;
+		img, picture {
+			object-fit: cover;
+			object-position: right bottom;
+			width: 100%;
+		}
+	}
+	&__main {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+	}
+	&__heading {
+		font-family: $fontSecond;
+		font-size: 24px;
+		line-height: 28px;
+		font-weight: 700;
+		margin-bottom: 15px;
+		color: #080957;
+		span {
+			color: #FF6D02;
+			position: relative;
+			&:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: -5px;
+				width: 100%;
+				height: 3px;
+				background: #FF6D02;
+			}
+		}
+		&--mod-offset {
+			margin-bottom: 27px;
+		}
+
+	}
+	&__btn {
+		text-decoration: none;
+		height: 44px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		border-radius: 8px;
+		padding: 12px 16px;
+		min-width: 177px;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 20px;
+		font-family: $fontFirst;
+		background: #FF6D02;
+		color: #ffffff;
+		transition: .25s;
+		&:hover {
+			background: #ed6300;
+			text-decoration: none;
+		}
+	}
+
+	&--size-side {
+		width: 100%;
+		max-width: 335px;
+		height: 483px;
+		.banner {
+			&__main {
+				padding: 25px 15px;
+			}
+			&__heading {
+				margin-bottom: 10px;
+				span {
+					&:after {
+						bottom: -2px;
+					}
+				}
+			}
+		}
+	}
+	&--size-mobile {
+		width: 100%;
+		max-width: 375px;
+		height: 483px;
+		.banner {
+			&__main {
+				padding: 45px 15px;
+			}
+			&__heading {
+				margin-bottom: 10px;
+				span {
+					&:after {
+						bottom: -5px;
+					}
+				}
+			}
+		}
+	}
+	&--size-wide {
+		height: 287px;
+		min-width: 700px;
+		max-width: 982px;
+		.banner {
+			&__main {
+				padding: 63px 99px;
+			}
+		}
+	}
+
+	&--theme-white {
+		background: #ffffff;
+	}
+
+	&--theme-blue {
+		background: #293a80;
+		.banner {
+			&__heading {
+				color: #ffffff;
+				span {
+					color: #ffffff;
+				}
+			}
+		}
+	}
+}
+
